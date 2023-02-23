@@ -8,5 +8,95 @@
     text-decoration: none;
     list-style: none;
     position: relative;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Abril Fatface', sans-serif ;
+}
+
+h2 {
+    font-size: 2rem !important;
+}
+
+h4 {
+    font-size: 1.5rem !important;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Merriweather',serif !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+}
+
+.website-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.position-relative {
+    position: relative !important;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 720px;
+}
+
+@media screen and (min-width: 768px){
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .container {
+        max-width: 540px;
+    }
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.photo-1 {
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
+}
+
+.text-align {
+    text-align: center !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.parallax-top {
+    transform: translate(-50%, -50%, 0) translateZ(-100px);
+}
+
+@media (min-width: 768px) {
+    .col-md-2 {
+        flex: 0 0 16.6666666667%;
+        max-width: 16.6666666667%;
+    }
 }
