@@ -23,3 +23,9 @@
             //seconds
         }, 0)
 }());
+
+var audio = document.getElementById("myAudio");
+audio.controls = false;
+audio.addEventListener('play', function(){
+    audio.currentTime = 0;
+});
