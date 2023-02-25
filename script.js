@@ -25,7 +25,15 @@
 }());
 
 var audio = document.getElementById("myAudio");
-audio.autoplay = true;
-audio.controls = false;
-audio.loop = true;
-audio.load();
+audio.muted = false;
+
+// Check if the audio is playing
+if(audio.paused) {
+    audio.play();
+}
+
+// Listen for user interaction with the website
+document.addEventListener('click', function() {
+  audio.muted = false;
+  audio.play();
+});
