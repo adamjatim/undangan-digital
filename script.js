@@ -25,7 +25,7 @@
 }());
 
 var audio = document.getElementById("myAudio");
+audio.autoplay = true;
 audio.controls = false;
-audio.addEventListener('play', function(){
-    audio.currentTime = 0;
-});
+audio.loop = true;
+audio.load();
