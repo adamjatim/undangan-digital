@@ -32,8 +32,45 @@ if(audio.paused) {
     audio.play();
 }
 
-// Listen for user interaction with the website
-document.addEventListener('click', function() {
-  audio.muted = false;
-  audio.play();
-});
+function showAudioPermissionPopup() {
+    const popup = document.createElement('div');
+    popup.innerHTML = 'Allow audio autoplay to listen to our content';
+    popup.style.position = 'fixed';
+    popup.style.bottom = '20px';
+    popup.style.right = '20px';
+    popup.style.backgroundColor = '#f5f5f5';
+    popup.style.border = '1px solid #ccc';
+    popup.style.padding = '10px';
+    popup.style.zIndex = '9999';
+    popup.onclick = () => {
+      requestAudioPermission();
+      popup.remove();
+    };
+    document.body.appendChild(popup);
+  }
+  
+  async function requestAudioPermission() {
+    try {
+      const permissionStatus = await navigator.permissions.query({ name: 'autoplay' });
+      if (permissionStatus.state === 'granted') {
+        playAudio();
+      } else if (permissionStatus.state === 'prompt') {
+        const result = await permissionStatus.ask();
+        if (result === 'granted') {
+          playAudio();
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  function playAudio() {
+    const audio = new Audio('your-audio-file.mp3');
+    audio.autoplay = true;
+    audio.loop = true;
+    audio.controls = false;
+    document.body.appendChild(audio);
+  }
+  
+  showAudioPermissionPopup();
