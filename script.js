@@ -66,7 +66,7 @@ function showAudioPermissionPopup() {
   }
   
   function playAudio() {
-    const audio = new Audio('your-audio-file.mp3');
+    const audio = new Audio('./src/audio/BarakaAllahuLakuma.mp3');
     audio.autoplay = true;
     audio.loop = true;
     audio.controls = false;
