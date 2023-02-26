@@ -71,9 +71,10 @@
         <section>
             
         </section>
-        <audio autoplay loop id="myAudio">
-            <source src="./src/audio/BarakaAllahuLakuma.mp3" type="audio/mpeg">
-        </audio>
+        <audio id="my-audio" src="./src/audio/BarakaAllahuLakuma.mp3"></audio>
+
+        <button id="play-button" onclick="playAudio()">Play</button>
+        <button id="pause-button" style="display:none" onclick="pauseAudio()">Pause</button>
     </div>
 </body>
 </html>
